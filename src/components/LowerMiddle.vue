@@ -48,16 +48,15 @@ import scamData from '@/assets/output.json'
 let filteredData = []
 
 scamData.forEach((item) => {
-  const year = item["裁判日期"].slice(0, 4);
+  const year = item['裁判日期'].slice(0, 4)
   if (!filteredData[year]) {
-    filteredData[year] = [];
+    filteredData[year] = []
   }
-  const later = item["裁判日期"].slice(5);
-  filteredData[year].push([`2000-${later}`, Number(year) + Math.random()*0.5])
-});
+  const later = item['裁判日期'].slice(5)
+  filteredData[year].push([`2000-${later}`, Number(year) + Math.random() * 0.5])
+})
 
-console.log(filteredData["2010"])
-
+console.log(filteredData['2010'])
 
 export default {
   data() {
@@ -95,8 +94,7 @@ export default {
           formatter: (params) => {
             if (params.value.length > 1) {
               return (
-                params.seriesName.slice(0, 4)+"-"+
-                params.value[0].slice(5) 
+                params.seriesName.slice(0, 4) + '-' + params.value[0].slice(5)
               )
             } else {
               return (
@@ -113,7 +111,10 @@ export default {
             show: true,
             type: 'cross',
             label: {
-              formatter: (params) => params.axisDimension === "x" ? new Date(params.value).getMonth() + 1 : parseInt(params.value)
+              formatter: (params) =>
+                params.axisDimension === 'x'
+                  ? new Date(params.value).getMonth() + 1
+                  : parseInt(params.value)
             },
             lineStyle: {
               type: 'dashed',
@@ -132,7 +133,20 @@ export default {
         },
         brush: {},
         legend: {
-          data: ['2010年', '2011年', '2012年', '2013年', '2014年', '2015年', '2016年', '2017年', '2018年', '2019年', '2020年', '2021年'],
+          data: [
+            '2010年',
+            '2011年',
+            '2012年',
+            '2013年',
+            '2014年',
+            '2015年',
+            '2016年',
+            '2017年',
+            '2018年',
+            '2019年',
+            '2020年',
+            '2021年'
+          ],
           left: 'center',
           bottom: 10
         },
@@ -163,9 +177,9 @@ export default {
             name: '2010年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -197,9 +211,9 @@ export default {
             name: '2011年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -231,9 +245,9 @@ export default {
             name: '2012年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -265,9 +279,9 @@ export default {
             name: '2013年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -299,9 +313,9 @@ export default {
             name: '2014年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -333,9 +347,9 @@ export default {
             name: '2015年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -367,9 +381,9 @@ export default {
             name: '2016年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -401,9 +415,9 @@ export default {
             name: '2017年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -435,9 +449,9 @@ export default {
             name: '2018年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -469,9 +483,9 @@ export default {
             name: '2019年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -503,9 +517,9 @@ export default {
             name: '2020年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -537,9 +551,9 @@ export default {
             name: '2021年',
             type: 'scatter',
             itemStyle: {
-      opacity: 0.6,
-      },
-      symbolSize: 8,
+              opacity: 0.6
+            },
+            symbolSize: 8,
             emphasis: {
               focus: 'series'
             },
@@ -580,9 +594,25 @@ export default {
           bottom: '7%',
           containLabel: true
         },
+        tooltip: {
+          showDelay: 0,
+        },
         xAxis: {
           type: 'category',
-          data: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021']
+          data: [
+            '2010',
+            '2011',
+            '2012',
+            '2013',
+            '2014',
+            '2015',
+            '2016',
+            '2017',
+            '2018',
+            '2019',
+            '2020',
+            '2021'
+          ]
         },
         yAxis: {},
         series: [
@@ -591,53 +621,53 @@ export default {
             id: 'total',
             data: [
               {
-                value: calculateAverage(filteredData["2010"], 0),
+                value: calculateAverage(filteredData['2010'], 0),
                 groupId: '2010'
               },
               {
-                value: calculateAverage(filteredData["2011"], 0),
+                value: calculateAverage(filteredData['2011'], 0),
                 groupId: '2011'
               },
               {
-                value: calculateAverage(filteredData["2012"], 0),
+                value: calculateAverage(filteredData['2012'], 0),
                 groupId: '2012'
               },
               {
-                value: calculateAverage(filteredData["2013"], 0),
+                value: calculateAverage(filteredData['2013'], 0),
                 groupId: '2013'
               },
               {
-                value: calculateAverage(filteredData["2014"], 0),
+                value: calculateAverage(filteredData['2014'], 0),
                 groupId: '2014'
               },
               {
-                value: calculateAverage(filteredData["2015"], 0),
+                value: calculateAverage(filteredData['2015'], 0),
                 groupId: '2015'
               },
               {
-                value: calculateAverage(filteredData["2016"], 0),
+                value: calculateAverage(filteredData['2016'], 0),
                 groupId: '2016'
               },
               {
-                value: calculateAverage(filteredData["2017"], 0),
+                value: calculateAverage(filteredData['2017'], 0),
                 groupId: '2017'
               },
               {
-                value: calculateAverage(filteredData["2018"], 0),
+                value: calculateAverage(filteredData['2018'], 0),
                 groupId: '2018'
               },
               {
-                value: calculateAverage(filteredData["2019"], 0),
+                value: calculateAverage(filteredData['2019'], 0),
                 groupId: '2019'
               },
               {
-                value: calculateAverage(filteredData["2020"], 0),
+                value: calculateAverage(filteredData['2020'], 0),
                 groupId: '2020'
               },
               {
-                value: calculateAverage(filteredData["2021"], 0),
+                value: calculateAverage(filteredData['2021'], 0),
                 groupId: '2021'
-              },
+              }
             ],
             universalTransition: {
               enabled: true,
