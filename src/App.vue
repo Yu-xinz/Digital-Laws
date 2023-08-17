@@ -41,7 +41,7 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center; /* 水平居中 */
-  height: 90vh; /* 使用 100vh 设置高度为视口高度 */
+  height: 95vh; /* 使用 100vh 设置高度为视口高度 */
   width: 100vw; /* 使用 100vw 设置宽度为视口宽度 */
 }
 

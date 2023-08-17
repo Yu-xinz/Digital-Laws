@@ -16,7 +16,7 @@
 <style scoped>
 .upper-middle {
   flex: 2; /* 占据 2/6 = 1/3 的高度 */
-  width: 900px;
+  width: 925px;
   background-color: #faf8f8; /* 灰色背景 */
   margin-bottom: 20px; /* 留有空隙 */
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -498,6 +498,7 @@ var option = {
     min: 16,
     max: 50, // 调整最大值
     calculable: true,
+    show: false,
     inRange: {
       color: ['lightskyblue', 'orangered'] // 调整颜色范围
     },

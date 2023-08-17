@@ -9,14 +9,14 @@
         @click="toggleChart"
       ></v-btn>
     </div>
-    <div id="chartContainer" style="width: 100%; height: 100%"></div>
+    <div id="chartContainer" style="width: 100%; height: 100%; padding: 8px 12px"></div>
   </div>
 </template>
 
 <style scoped>
 .lower-middle {
   flex: 1; /* 占据 1/6 的高度 */
-  width: 900px;
+  width: 925px;
   background-color: #faf8f8; /* 灰色背景 */
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
