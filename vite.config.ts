@@ -14,7 +14,7 @@ export default defineConfig({
       autoImport: true,
     }),
     compression({
-      compression: "brotliCompress"
+      algorithm: 'brotliCompress'
     }),
   ],
   resolve: {
