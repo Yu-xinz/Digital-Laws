@@ -1,0 +1,36 @@
+name: deploy
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - README.md
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 8
+
+    - name: Build
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        cache: 'pnpm'
+    - run: pnpm install
+    - run: pnpm build
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        publish_dir: ./dist
+        github_token: ${{ secrets.DEPLOY_SECRET }}
+        user_name: ${{ secrets.MY_USER_NAME }}
+        user_email: ${{ secrets.MY_USER_EMAIL }}
+        commit_message: Github CI
