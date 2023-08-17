@@ -13,7 +13,9 @@ export default defineConfig({
     vuetify({
       autoImport: true,
     }),
-    compression()
+    compression({
+      compression: "brotliCompress"
+    }),
   ],
   resolve: {
     alias: {
@@ -36,5 +38,6 @@ export default defineConfig({
         assetFileNames: '[ext]/[name]-[hash].[ext]'
       }
     }
-  }
+  },
+  base: "/Digital-Laws"
 })
