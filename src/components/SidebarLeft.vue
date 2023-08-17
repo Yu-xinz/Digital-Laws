@@ -31,7 +31,6 @@ onMounted(() => {
     series: [
       {
         type: 'sankey',
-        bottom: '10%',
         emphasis: {
           focus: 'adjacency'
         },

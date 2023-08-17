@@ -495,7 +495,7 @@ var option = {
     selectedMode: 'single'
   },
   visualMap: {
-    min: 15,
+    min: 16,
     max: 50, // 调整最大值
     calculable: true,
     inRange: {
