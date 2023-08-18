@@ -23,6 +23,9 @@ onMounted(() => {
   var option;
 
   option = {
+    title: {
+          text: '妇女儿童失踪案件被告人特征分析',
+        },
     tooltip: {
       trigger: 'item',
       triggerOn: 'mousemove'

@@ -69,7 +69,7 @@ onMounted(() => {
       axisLabel: {
         show: false
       },
-      name: "拐出地",
+      name: "拐入地",
       nameLocation: "middle"
     },
     yAxis: {
@@ -81,7 +81,7 @@ onMounted(() => {
       axisLabel: {
         show: false
       },
-      name: "拐入地",
+      name: "拐出地",
       nameLocation: "middle"
     },
     visualMap: {
