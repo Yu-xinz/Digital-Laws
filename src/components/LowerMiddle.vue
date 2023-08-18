@@ -53,7 +53,8 @@ scamData.forEach((item) => {
     filteredData[year] = []
   }
   const later = item['裁判日期'].slice(5)
-  filteredData[year].push([`2000-${later}`, Number(year) + Math.random() * 0.5])
+  const name = item['案件名称']
+  filteredData[year].push([`2000-${later}`, Number(year) + Math.random() * 0.5, name])
 })
 
 console.log(filteredData['2010'])
@@ -92,8 +93,10 @@ export default {
           // trigger: 'axis',
           showDelay: 0,
           formatter: (params) => {
+            console.log(params)
             if (params.value.length > 1) {
               return (
+                params.value[2] + ' :<br/>' +
                 params.seriesName.slice(0, 4) + '-' + params.value[0].slice(5)
               )
             } else {
